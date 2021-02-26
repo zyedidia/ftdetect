@@ -1,0 +1,5 @@
+{
+    "name": "lisp",
+    "exts": [".el", ".lsp", ".lisp", ".scm", ".ss"],
+    "files": ["emacs", "zile"]
+}

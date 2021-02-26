@@ -1,0 +1,4 @@
+{
+    "name": "clojure",
+    "exts": [".clj", ".cljs", ".cljc", ".edn"]
+}

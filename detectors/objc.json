@@ -1,0 +1,4 @@
+{
+    "name": "objective-c",
+    "exts": [".m", ".mm", ".h"]
+}

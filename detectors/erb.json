@@ -1,0 +1,4 @@
+{
+    "name": "erb",
+    "exts": [".erb", ".rhtml"]
+}

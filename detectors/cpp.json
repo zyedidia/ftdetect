@@ -1,0 +1,4 @@
+{
+    "name": "c++",
+    "exts": [".cc", ".cpp", ".cxx", ".hh", ".hpp", ".hxx", ".i", ".ii", ".def"]
+}

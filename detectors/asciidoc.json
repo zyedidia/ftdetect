@@ -1,0 +1,4 @@
+{
+    "name": "asciidoc",
+    "exts": [".asc", ".asciidoc", "adoc"]
+}

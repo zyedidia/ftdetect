@@ -1,0 +1,7 @@
+{
+    "name": "groff",
+    "exts": [".me", ".mm", ".ms", ".rof", ".tmac"],
+    "file": {
+        "regex": "\\.m[ems]$|\\.rof|\\.tmac$|^tmac."
+    }
+}

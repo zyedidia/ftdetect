@@ -1,0 +1,6 @@
+{
+    "name": "vi",
+    "file": {
+        "regex": "(^|/|\\.)(ex|vim)rc$|\\.vim"
+    }
+}

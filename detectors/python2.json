@@ -1,0 +1,7 @@
+{
+    "name": "python2",
+    "exts": [".py2"],
+    "header": {
+        "regex": "^#!.*/(env +)?python2$"
+    }
+}

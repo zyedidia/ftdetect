@@ -1,0 +1,7 @@
+{
+    "name": "sed",
+    "exts": [".sed"],
+    "header": {
+        "regex": "^#!.*bin/(env +)?sed( |$)"
+    }
+}

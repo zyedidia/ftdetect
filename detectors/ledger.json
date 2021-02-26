@@ -1,0 +1,7 @@
+{
+    "name": "ledger",
+    "exts": [".ledger", ".ldgr", ".beancount", ".bnct"],
+    "file": {
+        "regex": "(^|\\.|/)(ledger|ldgr|beancount|bnct)$"
+    }
+}

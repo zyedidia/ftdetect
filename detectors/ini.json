@@ -1,0 +1,7 @@
+{
+    "name": "ini",
+    "exts": [".ini", ".desktop"],
+    "file": {
+        "regex": "\\.(ini|desktop|lfl|override|tscn|tres)$|(mimeapps\\.list|pinforc|setup\\.cfg|project\\.godot)$"
+    }
+}

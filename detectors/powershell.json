@@ -1,0 +1,4 @@
+{
+    "name": "powershell",
+    "exts": [".ps1", ".psm1", ".psd1"]
+}

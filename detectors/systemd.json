@@ -1,0 +1,7 @@
+{
+    "name": "systemd",
+    "exts": [".service", ".socket", ".timer"],
+    "header": {
+        "regex": "^\\[Unit\\]$"
+    }
+}

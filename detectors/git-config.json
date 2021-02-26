@@ -1,0 +1,6 @@
+{
+    "name": "git-config",
+    "file": {
+        "regex": "git(config|modules)$|\\.git/config$"
+    }
+}

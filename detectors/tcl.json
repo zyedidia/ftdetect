@@ -1,0 +1,7 @@
+{
+    "name": "tcl",
+    "exts": [".tcl"],
+    "header": {
+        "regex": "^#!.*/(env +)?tclsh( |$)"
+    }
+}

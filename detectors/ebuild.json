@@ -1,0 +1,4 @@
+{
+    "name": "ebuild",
+    "exts": [".ebuild", ".eclass"]
+}

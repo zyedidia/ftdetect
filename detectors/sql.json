@@ -1,0 +1,7 @@
+{
+    "name": "sql",
+    "exts": [".sql"],
+    "file": {
+        "regex": "sqliterc$"
+    }
+}

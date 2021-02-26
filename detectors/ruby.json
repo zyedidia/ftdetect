@@ -1,0 +1,8 @@
+{
+    "name": "ruby",
+    "exts": [".rb", ".rake", ".gemspec"],
+    "files": ["Gemfile", "config.ru", "Rakefile", "Capfile", "Vagrantfile", "Guardfile", "Appfile", "Fastfile", "Pluginfile", "Podfile"],
+    "header": {
+        "regex": "^#!.*/(env +)?ruby( |$)"
+    }
+}

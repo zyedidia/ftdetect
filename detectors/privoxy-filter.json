@@ -1,0 +1,4 @@
+{
+    "name": "privoxy-filter",
+    "exts": [".filter"]
+}

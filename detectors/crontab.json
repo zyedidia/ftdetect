@@ -1,0 +1,10 @@
+{
+    "name": "crontab",
+    "files": ["crontab"],
+    "file": {
+        "regex": "crontab$"
+    },
+    "header": {
+        "regex": "^#.*?/etc/crontab"
+    }
+}

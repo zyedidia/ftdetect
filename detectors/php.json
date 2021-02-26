@@ -1,0 +1,7 @@
+{
+    "name": "php",
+    "exts": [".php"],
+    "file": {
+        "regex": "\\.php[2345s~]?$"
+    }
+}

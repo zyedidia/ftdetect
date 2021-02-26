@@ -1,0 +1,4 @@
+{
+    "name": "ocaml",
+    "exts": [".ml", ".mli"]
+}

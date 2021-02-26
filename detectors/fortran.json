@@ -1,0 +1,7 @@
+{
+    "name": "fortran",
+    "exts": [".f", ".f90", ".f95"],
+    "file": {
+        "regex": "\\.([Ff]|[Ff]90|[Ff]95|[Ff][Oo][Rr])$"
+    }
+}

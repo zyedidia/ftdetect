@@ -1,0 +1,10 @@
+{
+    "name": "mail",
+    "exts": [".eml"],
+    "file": {
+        "regex": ".*/mutt-.*$"
+    },
+    "header": {
+        "regex": "^From .* \\d+:\\d+:\\d+ \\d+"
+    }
+}

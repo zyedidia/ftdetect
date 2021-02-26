@@ -1,0 +1,4 @@
+{
+    "name": "forth",
+    "exts": [".forth", ".4th", ".fs", ".fs8", ".ft", ".fth", ".frt"]
+}

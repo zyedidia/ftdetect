@@ -1,0 +1,4 @@
+{
+    "name": "markdown",
+    "exts": [".md", ".mkd", ".mkdn", ".markdown"]
+}

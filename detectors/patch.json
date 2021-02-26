@@ -1,0 +1,4 @@
+{
+    "name": "patch",
+    "exts": [".patch", ".diff"]
+}

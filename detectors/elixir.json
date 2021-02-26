@@ -1,0 +1,4 @@
+{
+    "name": "elixir",
+    "exts": [".ex", ".exs"]
+}

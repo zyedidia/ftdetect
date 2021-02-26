@@ -1,0 +1,7 @@
+{
+    "name": "fish",
+    "exts": [".fish"],
+    "header": {
+        "regex": "^#!.*/(env +)?fish( |$)"
+    }
+}

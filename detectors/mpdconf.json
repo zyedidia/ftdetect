@@ -1,0 +1,7 @@
+{
+    "name": "mpd",
+    "files": ["mpd.conf"],
+    "file": {
+        "regex": "mpd\\.conf$"
+    }
+}

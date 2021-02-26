@@ -1,0 +1,4 @@
+{
+    "name": "lilypond",
+    "exts": [".ly", ".ily", ".lly"]
+}

@@ -1,0 +1,4 @@
+{
+    "name": "verilog",
+    "exts": [".v", ".vh", ".sv", ".svh"]
+}

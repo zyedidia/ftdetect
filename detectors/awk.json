@@ -1,0 +1,7 @@
+{
+    "name": "awk",
+    "exts": [".awk"],
+    "header": {
+        "regex": "^#!.*bin/(env +)?awk( |$)"
+    }
+}

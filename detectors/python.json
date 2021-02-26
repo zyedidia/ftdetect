@@ -1,0 +1,7 @@
+{
+    "name": "python",
+    "exts": [".py", ".py3"],
+    "header": {
+        "regex": "^#!.*/(env +)?python(3)?$"
+    }
+}

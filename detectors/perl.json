@@ -1,0 +1,7 @@
+{
+    "name": "perl",
+    "exts": [".pl", ".pm"],
+    "header": {
+        "regex": "^#!.*/(env +)?perl( |$)"
+    }
+}

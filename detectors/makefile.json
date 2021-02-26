@@ -1,0 +1,11 @@
+{
+    "name": "makefile",
+    "exts": [".mk", ".mak"],
+    "files": ["Makefile", "makefile", "GNUmakefile"],
+    "file": {
+        "regex": "[Mm]akefile$"
+    },
+    "header": {
+        "regex": "^#!.*/(env +)?[bg]?make( |$)"
+    }
+}

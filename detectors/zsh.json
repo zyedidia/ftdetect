@@ -1,0 +1,10 @@
+{
+    "name": "zsh",
+    "exts": [".zsh", ".zshrc"],
+    "file": {
+        "regex": "(\\.zsh$|\\.?(zshenv|zprofile|zshrc|zlogin|zlogout)$)"
+    },
+    "header": {
+        "regex": "^#!.*/(env +)?zsh( |$)"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "name": "xml",
+    "exts": [".xml", ".sgm", ".sgml", ".rng", ".svg", ".plist"],
+    "header": {
+        "regex": "<\\?xml.*\\?>"
+    }
+}

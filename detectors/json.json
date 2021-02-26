@@ -1,0 +1,7 @@
+{
+    "name": "json",
+    "exts": [".json"],
+    "header": {
+        "regex": "^\\{$"
+    }
+}

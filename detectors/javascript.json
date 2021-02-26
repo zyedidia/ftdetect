@@ -1,0 +1,10 @@
+{
+    "filename": "javascript",
+    "exts": [".js", ".es", ".mjs"],
+    "file": {
+        "regex": "\\.es[5678]?$"
+    },
+    "header": {
+        "regex": "^#!.*/(env +)?node( |$)"
+    }
+}

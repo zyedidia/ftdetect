@@ -1,0 +1,7 @@
+{
+    "name": "godoc",
+    "exts": [".godoc"],
+    "header": {
+        "regex": "package.*import"
+    }
+}
