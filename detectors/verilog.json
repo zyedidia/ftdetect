@@ -1,4 +1,4 @@
 {
     "name": "verilog",
-    "exts": [".v", ".vh", ".sv", ".svh"]
+    "exts": [".v", ".vh"]
 }
