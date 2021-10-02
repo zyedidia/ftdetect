@@ -129,6 +129,9 @@ func (ds Detectors) RegisterDetector(d *Detector) {
 	for _, f := range d.Files {
 		ds[f] = append(ds[f], d)
 	}
+	if len(d.Files) == 0 && len(d.Exts) == 0 {
+		ds[""] = append(ds[""], d)
+	}
 }
 
 // Detect returns the language that was detected from the filename and file
