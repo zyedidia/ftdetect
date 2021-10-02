@@ -1,5 +1,5 @@
 {
-    "name": "git-rebase-todo",
+    "name": "git",
     "file": {
         "regex": "^(.*[\\/])?git\\-rebase\\-todo$"
     }

@@ -1,5 +1,5 @@
 {
-    "name": "git-commit",
+    "name": "git",
     "file": {
         "regex": "^(.*[\\/])?(COMMIT_EDITMSG|TAG_EDITMSG)$"
     }
