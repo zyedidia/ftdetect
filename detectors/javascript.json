@@ -1,5 +1,5 @@
 {
-    "filename": "javascript",
+    "name": "javascript",
     "exts": [".js", ".es", ".mjs"],
     "file": {
         "regex": "\\.es[5678]?$"

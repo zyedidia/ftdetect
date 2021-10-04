@@ -1,6 +1,6 @@
 {
     "name": "shell",
-    "exts": [".sh"],
+    "exts": [".sh", ""],
     "file": {
         "regex": "(\\.bash|\\.ash|bashrc|bash_aliases|bash_functions|profile|bash-fc\\.|Pkgfile|pkgmk.conf|rc.conf|PKGBUILD|.ebuild\\$|APKBUILD)"
     },
