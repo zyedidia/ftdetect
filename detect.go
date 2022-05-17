@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"compress/gzip"
 	"encoding/gob"
+	"encoding/json"
 	"path/filepath"
 	"regexp"
 
@@ -43,14 +44,6 @@ func MustRegex(s string) *regex {
 		panic(err)
 	}
 	return r
-}
-
-func (r *regex) mustCompile() {
-	if r == nil {
-		return
-	}
-
-	r.compiled = regexp.MustCompile(r.Regex)
 }
 
 func (r *regex) Match(b []byte) bool {
@@ -94,7 +87,9 @@ type Detector struct {
 	Name     string
 }
 
-// Detectors is a set of languages that are supported.
+// Detectors is a set of languages that are supported. It is a map from
+// extension/filename to the list of detectors that are registered for those
+// values.
 type Detectors map[string][]*Detector
 
 // LoadDetectors loads a set of languages from a serialized Detectors byte slice.
@@ -109,6 +104,13 @@ func LoadDetectors(b []byte) (Detectors, error) {
 	fz.Close()
 
 	return ds, err
+}
+
+// LoadDetectorJson loads a detector from a json spec.
+func LoadDetectorJson(data []byte) (*Detector, error) {
+	var d Detector
+	err := json.Unmarshal(data, &d)
+	return &d, err
 }
 
 // Serialize writes the detector set to a byte slice so it can be saved.
@@ -134,6 +136,19 @@ func (ds Detectors) RegisterDetector(d *Detector) {
 	}
 }
 
+// SetPriority sets the priority for a certain language. A higher priority will
+// make this language match above others when there are match conflicts.
+func (ds Detectors) SetPriority(lang string, priority int) {
+	for _, arrs := range ds {
+		for _, d := range arrs {
+			if d.Name == lang {
+				d.Priority = priority
+				return
+			}
+		}
+	}
+}
+
 // Detect returns the language that was detected from the filename and file
 // header (first line of file), or nil if no matching language was found.
 func (ds Detectors) Detect(filename string, header []byte) *Detector {
@@ -142,38 +157,23 @@ func (ds Detectors) Detect(filename string, header []byte) *Detector {
 	if !ok {
 		arr, ok = ds[ext]
 	}
-	if ok {
-		if len(arr) == 1 {
-			return arr[0]
+	if !ok {
+		for _, arrs := range ds {
+			arr = append(arr, arrs...)
 		}
+	}
+	if len(arr) == 1 {
+		// no conflicts
+		return arr[0]
+	}
 
-		var best *Detector
-		var bestMatch *Detector
-		for _, d := range arr {
-			if d.File.MatchString(filename) || d.Header.Match(header) {
-				if bestMatch == nil || d.Priority > bestMatch.Priority {
-					bestMatch = d
-				}
-			}
+	var best *Detector
+	for _, d := range arr {
+		if ok || d.File.MatchString(filename) || d.Header.Match(header) {
 			if best == nil || d.Priority > best.Priority {
 				best = d
 			}
 		}
-		if bestMatch != nil {
-			return bestMatch
-		}
-		return best
 	}
-
-	var best *Detector
-	for _, arr := range ds {
-		for _, d := range arr {
-			if (d.File.MatchString(filename) || d.Header.Match(header)) &&
-				(best == nil || d.Priority > best.Priority) {
-				best = d
-			}
-		}
-	}
-
 	return best
 }

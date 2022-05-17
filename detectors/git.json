@@ -1,6 +1,0 @@
-{
-    "name": "git",
-    "file": {
-        "regex": "(^(.*[\\/])?(COMMIT_EDITMSG|TAG_EDITMSG)$)|(^(.*[\\/])?git\\-rebase\\-todo$)"
-    }
-}
