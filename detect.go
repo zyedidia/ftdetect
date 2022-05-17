@@ -7,18 +7,7 @@ import (
 	"encoding/json"
 	"path/filepath"
 	"regexp"
-
-	_ "embed"
 )
-
-//go:embed detectors/detectors.dat
-var defaultDetectors []byte
-
-// LoadDefaultDetectors returns a set of detectors for many programming languages.
-func LoadDefaultDetectors() Detectors {
-	d, _ := LoadDetectors(defaultDetectors)
-	return d
-}
 
 type regex struct {
 	compiled *regexp.Regexp

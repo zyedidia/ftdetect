@@ -61,28 +61,3 @@ func TestDetectors(t *testing.T) {
 		})
 	}
 }
-
-func TestDefaultDetectors(t *testing.T) {
-	ds := ftdetect.LoadDefaultDetectors()
-
-	tests := []struct {
-		filename string
-		header   string
-		filetype string
-	}{
-		{"hello.bash", "", "shell"},
-		{"hello.go", "", "go"},
-		{"test", "#!/bin/bash", "shell"},
-		{".bashrc", "", "shell"},
-		{"test.js", "", "javascript"},
-	}
-
-	for _, tt := range tests {
-		t.Run(tt.filename, func(t *testing.T) {
-			dsd := ds.Detect(tt.filename, []byte(tt.header))
-			if dsd == nil || dsd.Name != tt.filetype {
-				t.Errorf("ds detected wrong filetype: wanted %s, got %s", tt.filetype, dsd.Name)
-			}
-		})
-	}
-}

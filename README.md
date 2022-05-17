@@ -11,8 +11,9 @@ The library is optimized for very fast detection in the common case and
 supports saving the detection data structure to a file for very fast
 loading/startup time.
 
-A default set of detectors for 135 different languages is provided as an
-embedded dataset.
+A default set of detectors for 135 different languages is provided. If you
+would like to do the embedding yourself you can specify the `ftdetect_custom`
+build tag to avoid embedding the default detectors.
 
 The `./cmd/detect` directory contains an example tool which uses the default
 detectors to perform file detection on the first argument to the CLI
