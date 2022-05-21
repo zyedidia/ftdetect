@@ -158,7 +158,7 @@ func (ds Detectors) Detect(filename string, header []byte) *Detector {
 
 	var best *Detector
 	for _, d := range arr {
-		if ok || d.File.MatchString(filename) || d.Header.Match(header) {
+		if (ok && len(filename) == 0) || (len(filename) != 0 && d.File.MatchString(filename)) || (len(header) != 0 && d.Header.Match(header)) {
 			if best == nil || d.Priority > best.Priority {
 				best = d
 			}
