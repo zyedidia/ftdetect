@@ -61,3 +61,30 @@ func TestDetectors(t *testing.T) {
 		})
 	}
 }
+
+func TestDetectUnnamed(t *testing.T) {
+	// Detectors with no exts or files share the "" key, which an unnamed
+	// buffer also looks up. That lookup alone must not count as a match.
+	gitd := &ftdetect.Detector{
+		File: ftdetect.MustRegex("COMMIT_EDITMSG$"),
+		Name: "git",
+	}
+	shd := &ftdetect.Detector{
+		Header: ftdetect.MustRegex("^#!.*/(env +)?(ba)?(a)?(mk)?sh( |$)"),
+		Name:   "shell",
+	}
+
+	ds := make(ftdetect.Detectors)
+	ds.RegisterDetector(gitd)
+	ds.RegisterDetector(shd)
+
+	if d := ds.Detect("", nil); d != nil {
+		t.Errorf("empty unnamed buffer detected as %s", d.Name)
+	}
+	if d := ds.Detect("", []byte("hello")); d != nil {
+		t.Errorf("unnamed buffer detected as %s", d.Name)
+	}
+	if d := ds.Detect("", []byte("#!/bin/sh")); d == nil || d.Name != "shell" {
+		t.Error("unnamed buffer with shebang not detected as shell")
+	}
+}
